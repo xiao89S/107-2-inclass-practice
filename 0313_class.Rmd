@@ -31,3 +31,18 @@ c <- 47
 `107 my score`
 ```
 
+#numeric class
+
+```{r}
+a <- 5
+a2 <-5L
+```
+
+```{r}
+class (a)
+```
+
+```{r}
+class (a2)
+```
+

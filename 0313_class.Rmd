@@ -1,6 +1,6 @@
 ---
 title: '2019-03-13'
-author: "林茂廷"
+author: "宋麗箴"
 date: "3/13/2019"
 output: html_document
 ---
@@ -12,5 +12,14 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 a <- 2
 3 -> b
+```
+
+```{r}
+65 + b
+```
+
+```{r}
+c <- 47
+65 + c
 ```
 

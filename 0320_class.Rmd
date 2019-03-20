@@ -80,3 +80,11 @@ dtObjectVector<-ymd_hms(
 class(dtObject)
 ```
 
+```{r}
+typeof(dtObject)
+```
+
+```{r}
+as.double(dtObject)
+```
+

@@ -17,7 +17,7 @@ cat(dialogue, sep="\n")
 ```
 
 ```{r}
-aLogical <- c(T,T,T,T,T)
+aLogical <- c(F,T,T,T,T)
 class(aLogical)
 ```
 

@@ -78,6 +78,7 @@ dtObjectVector<-ymd_hms(
 
 ```{r}
 class(dtObject)
+dtObject
 ```
 
 ```{r}

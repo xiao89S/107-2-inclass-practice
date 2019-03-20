@@ -16,3 +16,12 @@ dialogue <- c("小明說：'明天不用上課。'",
 cat(dialogue, sep="\n")
 ```
 
+```{r}
+aLogical <- c(T,T,T,T,T)
+class(aLogical)
+```
+
+```{r}
+sum(aLogical)
+```
+

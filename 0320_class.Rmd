@@ -25,3 +25,38 @@ class(aLogical)
 sum(aLogical)
 ```
 
+```{r}
+studentMajors <- factor(c("經濟系","經濟系","法律系"))
+
+typeof(studentMajors)
+levels(studentMajors)
+```
+
+```{r}
+studentMajors
+```
+
+
+```{r}
+birthplace <- factor(c("台中","台中","台北","台北","台北"))
+
+class (birthplace)
+factor(birthplace)
+levels(birthplace)
+as.integer(birthplace)
+```
+
+```{r}
+stringInteger <- c("1","2","-11")
+class(stringInteger)
+```
+
+```{r}
+trueInteger <- as.integer(stringInteger)
+class(trueInteger)
+```
+
+```{r}
+sum(trueInteger)
+```
+

@@ -191,3 +191,13 @@ is.na(x2)
 is.na(y2)
 ```
 
+```{r}
+sum(x2)
+sum(x2,na.rm=F)
+sum(x2,na.rm=T)
+```
+
+```{r}
+0/0
+```
+

@@ -119,3 +119,15 @@ class(A)
 as.difftime(A)
 ```
 
+```{r}
+startingDate <- ymd("2000-02-17")
+```
+
+```{r}
+startingDate + years(1)
+```
+
+```{r}
+startingDate + dyears(1)
+```
+

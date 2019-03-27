@@ -40,3 +40,23 @@ as.double(LisbonDateTime)
 as.double(twDateTime)
 ```
 
+```{r}
+googletime<-(mdy_hms("3/14/2019 8:18:47"))
+googletime
+```
+
+```{r}
+date1<-ymd("2018-09-11")
+date1
+date2<-mdy("March 3, 2019")
+date2
+```
+
+```{r}
+class(date1)
+class(date2)
+typeof(date2)
+as.double(date1)
+as.double(date2)
+```
+

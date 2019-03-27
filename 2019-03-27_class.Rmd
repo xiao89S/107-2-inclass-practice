@@ -33,3 +33,9 @@ LisbonDateTime <- with_tz(twDateTime,tzone="Europe/Lisbon")
 LisbonDateTime
 ```
 
+```{r}
+class(LisbonDateTime)
+typeof(LisbonDateTime)
+as.double(LisbonDateTime)
+```
+

@@ -106,10 +106,16 @@ a %% b
 ```{r}
 twDateTime <- ymd_hms("2019-03-18 14:04:00", tz="Asia/Taipei")
 
-twDateTime-1
+twDateTime+1
 ```
 
 ```{r}
+dt1<-ymd("2019-08-11")
+dt2<-ymd("2000-02-01")
+dt1-dt2
 
+A<-dt1-dt2
+class(A)
+as.difftime(A)
 ```
 

@@ -60,3 +60,9 @@ as.double(date1)
 as.double(date2)
 ```
 
+```{r}
+as.double(ymd("1970-01-01"))
+as.integer(ymd("1970-01-02"))
+as.integer(ymd("2019-03-11"))
+```
+

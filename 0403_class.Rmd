@@ -32,7 +32,47 @@ exData2 <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/mas
 currency <- exData2$"幣別"
 ```
 
+```{r}
+head(currency)
+```
+
+```{r}
+levels(currency)
+class(currency)
+```
+
+```{r}
+currency <- as.factor(currency)
+class(currency)
+levels(currency)
+```
+
+*有幾種匯率(數量)*
+```{r}
+length(levels(currency))
+```
+
+```{r}
+A <- levels(currency)
+A
+```
+
+```{r}
+B <- length(A)
+B
+```
 
 
+```{r}
+head(currency)
+```
 
+```{r}
+currency2 <- c("日圓","美元","日圓")
+currency2
+```
+
+```{r}
+sum(currency == "日圓JPY/USD")
+```
 

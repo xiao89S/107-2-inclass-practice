@@ -76,3 +76,127 @@ currency2
 sum(currency == "日圓JPY/USD")
 ```
 
+```{r}
+x5 <- c("台北市","新北市","高雄市")
+greatTaipei <- c("台北市","新北市")
+
+x5 %in% greatTaipei
+!(x5 %in% greatTaipei)
+```
+
+```{r}
+y5 <- c("女","男","女")
+
+y5
+y5=="女"
+!(y5=="女")
+```
+
+```{r}
+x5 %in% greatTaipei
+y5=="女"
+(x5 %in% greatTaipei) & (y5=="女")
+
+!(x5 %in% greatTaipei) | !(y5=="女")
+```
+
+```{r}
+y5
+(y5 == "女")
+which(y5=="女")
+which((x5 %in% greatTaipei) & (y5=="女"))
+```
+
+```{r}
+x5 %in% greatTaipei
+y5=="女"
+
+(x5 %in% greatTaipei) | (y5=="女")
+which((x5 %in% greatTaipei) | (y5=="女"))
+```
+
+只滿足其中一個條件
+```{r}
+x5 %in% greatTaipei
+y5=="女"
+
+xor(x5 %in% greatTaipei, y5=="女")
+```
+
+```{r}
+library(readr)
+exData2 <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/exData2.csv")
+date <- as.character(exData2$期間)
+currency <- exData2$幣別
+exchangeRate <- exData2$匯率
+```
+
+```{r}
+class(date)
+head(date)
+
+library(lubridate)
+date <- ymd(date)
+class(date)
+```
+
+```{r}
+head(as.integer(date))
+as.integer(ymd("1980-08-01"))
+```
+
+```{r}
+After19800801 <- date>=ymd("1980-08-01")
+class(After19800801)
+sum(After19800801)
+```
+
+```{r}
+head(currency)
+head(currency == "歐元USD/EUR")
+sum(currency == "歐元USD/EUR")
+```
+
+```{r}
+head(is.na(exchangeRate))
+sum(is.na(exchangeRate))
+```
+
+```{r}
+sum(!is.na(exchangeRate) & currency == "歐元USD/EUR")
+```
+
+```{r}
+library(readr)
+transcriptDataFinal <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/transcriptDataFinal.csv")
+courseType <- transcriptDataFinal$`必選修類別（必∕選∕通）`
+major <- transcriptDataFinal$學系
+studentID <- transcriptDataFinal$學號
+grade <- transcriptDataFinal$學期成績
+```
+
+練習
+```{r}
+head(major)
+sum(major == "經濟學系")
+```
+
+```{r}
+head(transcriptDataFinal)
+sum(transcriptDataFinal == "5bdS6977b")
+```
+
+```{r}
+studentA <- transcriptDataFinal == "5bdS6977b"
+head(grade >= 60)
+sum((transcriptDataFinal == "5bdS6977b") & (grade >= 60))
+```
+
+```{r}
+sum((major == "經濟學系") & courseType == "選")
+```
+
+```{r}
+All <- major == "經濟學系" & courseType == "必"
+sum(All & grade < 60) / sum(All)
+```

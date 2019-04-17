@@ -105,3 +105,15 @@ extract2[[1]]
 extract1[1][[1]]
 ```
 
+```{r}
+plasticContainer
+
+length(plasticContainer)
+plasticContainer[c(T,F,T)]
+```
+
+```{r}
+成績單
+成績單[c(FALSE,TRUE,TRUE)]
+```
+

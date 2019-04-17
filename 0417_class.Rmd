@@ -76,3 +76,32 @@ studentRecord[[2]]
 studentRecord[[4]][[3]]
 ```
 
+```{r}
+
+plasticContainer[c(1,2)]
+
+class(plasticContainer[c(1,2)])
+
+plasticContainer[[c(1,2)]]
+plasticContainer[[c("greenBox","redBox")]] 
+```
+
+```{r}
+extract1 <- plasticContainer[c("greenBox")]
+extract1
+class(extract1)
+```
+
+```{r}
+extract2 <- plasticContainer[[c("greenBox")]]
+extract2
+class(extract2)
+```
+
+```{r}
+extract1[[1]][[1]]
+extract2[[1]]
+
+extract1[1][[1]]
+```
+

@@ -1,0 +1,45 @@
+---
+title: '2019-04-24'
+author: "林茂廷"
+date: "4/24/2019"
+output: html_document
+---
+
+```{r}
+Vec1 <- c(1:6)
+Vec1
+```
+
+```{r}
+Mat1 <- matrix(
+  c(2:7), 2,3
+)
+Mat1
+```
+
+```{r}
+class(Mat1)
+typeof(Mat1)
+```
+
+```{r}
+Mat1
+Mat1[[2]]
+```
+
+```{r}
+Mat2 <- matrix(
+  c("a","b","c","d"), 2, 2
+)
+Mat2
+```
+
+```{r}
+class(Mat2)
+typeof(Mat2)
+
+Mat2[[3]]
+Mat2[c(F,F,T,F)]
+Mat2[c]
+```
+

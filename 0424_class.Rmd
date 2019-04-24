@@ -70,3 +70,24 @@ typeof(StuDF)
 StuDF[["姓名"]][[3]]
 ```
 
+```{r}
+class(StuDF$姓名)
+
+StuDF$姓名 <- as.character(StuDF$姓名)
+class(StuDF$姓名)
+```
+
+```{r}
+StuDF2 <- data.frame(
+  學號=c(172,214,322,425,517),
+  姓名=c("小明","大雄","胖虎","小新","大白"),
+  成績=c(80,60,90,70,50),
+  stringsAsFactors = FALSE
+  )
+StuDF2 
+```
+
+```{r}
+class(StuDF2$姓名)
+```
+

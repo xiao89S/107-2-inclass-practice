@@ -40,7 +40,7 @@ typeof(Mat2)
 
 Mat2[[3]]
 Mat2[c(F,F,T,F)]
-Mat2[c]
+Mat2[c(1,4)]
 ```
 
 ```{r}
@@ -89,5 +89,23 @@ StuDF2
 
 ```{r}
 class(StuDF2$姓名)
+```
+
+```{r}
+class(StuList)
+as.data.frame(StuList) -> StuDF3
+
+class(StuDF3)
+StuDF3
+```
+
+```{r}
+as.data.frame(StuList,stringsAsFactors = F) -> StuDF4
+class(StuDF4)
+StuDF4
+```
+
+```{r}
+
 ```
 

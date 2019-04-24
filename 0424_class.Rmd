@@ -163,3 +163,7 @@ classSurvey[c(1:60),c(4,5)]
 classSurvey[,c(4,5)]
 ```
 
+```{r}
+classSurvey[,4] == "女"
+```
+

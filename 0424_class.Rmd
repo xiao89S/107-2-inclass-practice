@@ -122,5 +122,44 @@ matObj1[8]
 matObj1
 matObj1[3,2] 
 matObj1[c(F,F,TRUE,F,F),c(F,TRUE,F)]
+matObj1[c(4,6,8,9)]
+```
+
+```{r}
+LETTERS
+chosenLETTERS <- LETTERS[1:8]
+m <- matrix(chosenLETTERS,2,4)
+m
+tolower(m) # 轉成小寫
+toupper(m) # 轉成大寫
+```
+
+```{r}
+matObj1
+matObj1[c(1,4),c(2,3)]
+```
+
+```{r}
+matObj1[c(T,F,F,T,F),c(F,T,T)]
+```
+
+```{r}
+library(readr)
+classSurvey <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/classSurvey.csv")
+```
+
+```{r}
+class(classSurvey)
+```
+
+取出性別跟本學期學分數的欄位
+從dataframe視覺角度
+```{r}
+classSurvey[,4:5]
+```
+
+```{r}
+classSurvey[c(1:60),c(4,5)]
+classSurvey[,c(4,5)]
 ```
 

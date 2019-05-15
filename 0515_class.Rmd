@@ -152,3 +152,39 @@ a <- transcriptDataFinal$學號=="92aS67fee"
 transcriptDataFinal[a,]
 ```
 
+```{r}
+utility_cobb_douglass <- function(x,y,.alpha,.beta){
+  utilValue <- x^.alpha*y^.beta # 程序產生output值
+  return(utilValue) # 傳回output值
+}
+```
+
+```{r}
+class(utility_cobb_douglass)
+utility_cobb_douglass(1,2,0.5,0.8)
+```
+
+```{r}
+ahay <- function(x,y){
+  alright <- x*y
+  return(alright)
+}
+ahay(1,2)
+```
+
+```{r}
+supply_fun <- function(a,b,P){
+  Qs <- a+b*P
+  return(Qs)
+}
+supply_fun(1,2,4)
+```
+
+```{r}
+demand_fun <- function(c,d,P){
+  Qd <- c-d*P
+  return(Qd)
+}
+demand_fun(1,2,4)
+```
+

@@ -95,3 +95,53 @@ b$元素2 <- "Say No"
 b
 ```
 
+```{r}
+names(b)
+b[["新元素A"]] <- c(1,2,3)
+b$新元素B <- c(T,F,T)
+b
+names(b)
+names(b)[[4]] <- "hey"
+names(b)
+```
+
+```{r}
+library(readr)
+exData3 <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/exData3.csv",
+                    col_types = cols(
+                      匯率 = col_number(),
+                      期間 = col_character()))
+```
+
+
+```{r}
+library(lubridate)
+ymd(exData3$期間) -> exData3$期間
+class(exData3$期間)
+
+#or
+#```{r}
+#as.Date(exData3$期間) -> exData3$期間
+#class(exData3$期間)
+```
+
+
+```{r}
+isAsiaCrisis <- ymd("1997-06-01") <= exData3$期間 &
+  ymd("1998-12-01") >= exData3$期間
+isAsiaCrisis
+exData3[[4]] <- isAsiaCrisis
+exData3
+```
+
+
+```{r}
+colnames(exData3)[[4]] <- "isAsiaCrisis"
+exData3
+names(exData3)
+```
+
+```{r}
+exData3$期間[isAsiaCrisis]
+```
+

@@ -127,21 +127,28 @@ class(exData3$期間)
 
 
 ```{r}
-isAsiaCrisis <- ymd("1997-06-01") <= exData3$期間 &
+exData3$isAsiaCrisis <- ymd("1997-06-01") <= exData3$期間 &
   ymd("1998-12-01") >= exData3$期間
 isAsiaCrisis
-exData3[[4]] <- isAsiaCrisis
-exData3
-```
-
-
-```{r}
-colnames(exData3)[[4]] <- "isAsiaCrisis"
 exData3
 names(exData3)
 ```
 
+
 ```{r}
-exData3$期間[isAsiaCrisis]
+exData3[isAsiaCrisis,]
+exData3[exData3$isAsiaCrisis==T ,]
+
+#[直,橫]
+```
+
+```{r}
+library(readr)
+transcriptDataFinal <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/transcriptDataFinal.csv")
+```
+
+```{r}
+a <- transcriptDataFinal$學號=="92aS67fee"
+transcriptDataFinal[a,]
 ```
 

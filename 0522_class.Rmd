@@ -36,3 +36,35 @@ invoiceList$UTC時間[tpLogical] <-
 invoiceList 
 ```
 
+```{r}
+library(readr)
+transcriptDataFinal <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/transcriptDataFinal.csv")
+```
+
+```{r}
+gpa_fun <- function(studentID){
+  transcriptDataFinal$學號==studentID -> logiChosenStudent
+  
+  subSample <- transcriptDataFinal[logiChosenStudent,]
+  
+  sum(subSample$學期成績*subSample$學分數)/
+    sum(subSample$學分數) -> GPA
+  return(GPA)
+}
+gpa_fun("479W9ee8e")
+gpa_fun("9efW9aea5")
+```
+
+```{r}
+a <- ymd_hms("1973-02-21 12:05:22")
+with_tz(a,tz="Asia/Taipei")
+
+ymd_hms_tzChange <- function(x,y,z){
+  trueTime <- ymd_hms(x,tz=y)
+  changeTime <- with_tz(trueTime,tz=z)
+  return(changeTime)
+}
+
+ymd_hms_tzChange("1973-02-21 12:05:22","UTC","Asia/Taipei")
+```
+

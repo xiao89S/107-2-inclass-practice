@@ -112,7 +112,28 @@ date_convert_twYM <- function(x){
 
 }
 
-a <- date_convert_twYM("民國100年5月")
-class(a)
+date_convert_twYM(twDates)
+```
+
+```{r}
+utility_cobb_douglass2 <- function(x,y,.alpha=0.5,.beta=0.5){
+  utilValue <- x^.alpha*y^.beta
+  return(utilValue)
+}
+
+utility_cobb_douglass2(1,2) # 使用預設值
+utility_cobb_douglass2(1,2,0.5,0.8) # 自定參數值
+```
+
+```{r}
+date_convert_twYM <- function(x,dd="01"){
+  yyyy <- as.integer(str_extract(x,"(?<=(民國))[:digit:]+"))+1911
+  mm <- str_extract(x,"[:digit:]+(?=月)")
+  yyyymmdd <- ymd(str_c(yyyy,mm,dd,sep="-"))
+  return(yyyymmdd)
+
+}
+
+date_convert_twYM(twDates)
 ```
 

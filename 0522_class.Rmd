@@ -61,10 +61,29 @@ with_tz(a,tz="Asia/Taipei")
 
 ymd_hms_tzChange <- function(x,y,z){
   trueTime <- ymd_hms(x,tz=y)
-  changeTime <- with_tz(trueTime,tz=z)
+  changeTime <- with_tz(trueTime,tzone=z)
   return(changeTime)
 }
 
 ymd_hms_tzChange("1973-02-21 12:05:22","UTC","Asia/Taipei")
+```
+
+```{r}
+(invoiceList$訂單時區=="America/New_York") -> nyLogical
+(invoiceList$訂單時區=="Asia/Taipei") -> tpLogical
+
+invoiceList$nyLogical <- nyLogical
+invoiceList$tpLogical <- tpLogical
+
+library(lubridate)
+ymd_hms_tzChange(invoiceList$`訂單時區之下單時間`[nyLogical],
+        "America/New_York",
+        "UTC") -> invoiceList$UTC時間[nyLogical]
+
+ymd_hms_tzChange(invoiceList$`訂單時區之下單時間`[tpLogical],
+                 "Asia/Taipei",
+                 "UTC") -> invoiceList$UTC時間[tpLogical]
+
+invoiceList 
 ```
 

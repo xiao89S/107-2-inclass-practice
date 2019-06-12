@@ -56,7 +56,8 @@ for (i in seq_along(gmailAddress)) {
   if(str_detect(gmailAddress[[i]],"gmail.com")){
     print(gmailAddress[[i]])
   }else{
-    print(str_c(gmailAddress[[i]],"@gmail.com"))
+    gmailAddress[[i]] <- str_c(gmailAddress[[i]],"@gmail.com")
+    print(gmailAddress[[i]])
   }
 }
 ```
@@ -72,6 +73,22 @@ for (i in seq_along(commitHistory)) {
 ```
 
 ```{r}
+for (i in seq_along(commitHistory)) {
+  print(
+  str_c(
+    "Athor is ",
+    commitHistory[[i]]$commit$author$name,
+    ". Commiter is",
+    commitHistory[[i]]$commit$committer$name))
+  }
+```
 
+```{r}
+for (i in seq_along(commitHistory)) {
+  author <- commitHistory[[i]]$commit$author$name
+  commiter <- commitHistory[[i]]$commit$committer$name
+  yes <- author==commiter
+  print(commitHistory[[i]]$commit$committer$date[yes=TRUE])
+}
 ```
 

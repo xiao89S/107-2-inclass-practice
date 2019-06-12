@@ -1,0 +1,63 @@
+---
+title: '2019-06-12'
+author: "林茂廷"
+date: "6/12/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+load(url("https://www.dropbox.com/s/duh5aaqgl2f5m3z/loopTranscriptData.Rda?raw=1"))
+studentIds <- unique(transcriptDataFinal$學號) # 全部可能學號
+studentIds5 <- studentIds[1:5] # 前5筆學號
+```
+
+```{r}
+studentIds5
+seq_along(studentIds5)
+```
+
+```{r}
+length(studentIds5)
+1:length(studentIds5)
+```
+
+#針對每個學號做print
+
+
+```{r}
+i <- 1
+
+print(studentIds5[[i]])
+```
+
+```{r}
+for (i in seq_along(studentIds5)) {
+  print(studentIds5[i])
+}
+```
+
+
+```{r}
+gmailAddress <- c(
+  "tim@gmail.com",
+  "anita",
+  "yellen@gmail.com",
+  "huang@gmail.com"
+)
+```
+
+```{r}
+library(stringr)
+for (i in seq_along(gmailAddress)) {
+  if(str_detect(gmailAddress[[i]],"gmail.com")){
+    print(gmailAddress[[i]])
+  }else{
+    print(str_c(gmailAddress[[i]],"@gmail.com"))
+  }
+}
+```
+

@@ -92,3 +92,86 @@ for (i in seq_along(commitHistory)) {
 }
 ```
 
+```{r}
+saveCharacter <- vector("character",5)
+saveCharacter
+
+saveNumeric <- vector("numeric",5)
+saveNumeric
+
+saveLogical <- vector("logical",5)
+saveLogical
+
+saveList <- vector("list",5)
+saveList
+```
+
+```{r}
+saveGPA5 <- vector("numeric",length(studentIds5))
+saveGPA5
+```
+
+```{r}
+i <- 1
+gpa_fun(studentIds5[[i]]) -> saveGPA5[[i]]
+saveGPA5
+```
+
+
+```{r}
+#儲存很重要！
+
+for (i in seq_along(studentIds5)) {
+  gpa_fun(studentIds5[[i]]) -> saveGPA5[[i]]
+}
+saveGPA5
+```
+
+#Misson 1
+
+```{r}
+saveAuthor <- vector("character",length(commitHistory))
+
+for (i in seq_along(commitHistory)) {
+  saveAuthor[[i]] <- commitHistory[[i]]$commit$author$name
+}
+saveAuthor
+```
+
+#Mission 2
+
+```{r}
+saveCommitter <- vector("character",length(commitHistory))
+
+for (i in seq_along(commitHistory)) {
+  saveCommitter[[i]] <- commitHistory[[i]]$commit$committer$name
+}
+saveCommitter
+```
+
+#Mission 3
+
+```{r}
+saveDate <- vector("character",length(commitHistory))
+
+for (i in seq_along(commitHistory)) {
+  saveDate[[i]] <- commitHistory[[i]]$commit$committer$date
+}
+saveDate
+```
+
+#Expand mission
+
+```{r}
+saveSame <- vector("character",length(commitHistory))
+
+for (i in seq_along(commitHistory)) {
+  author <- commitHistory[[i]]$commit$author$name
+  committer <- commitHistory[[i]]$commit$committer$name
+  yes <- author==committer
+  commitHistory[[i]]$commit$committer$date -> saveSame
+
+}
+saveSame
+```
+
